@@ -47,9 +47,9 @@ AlexaSkill.prototype.eventHandlers = {
     } else if ("SayLang" === intentName) {
       AlexaSkill.prototype.getLangFromSession(intent, session, callback);
     } else if ("HowAreYou" === intentName) {
-      AlexaSkill.prototype.howAreYou(callback);
+      AlexaSkill.prototype.howAreYou(session, callback);
     } else if ("GoodMorning" === intentName) {
-      AlexaSkill.prototype.goodMorning(callback);
+      AlexaSkill.prototype.goodMorning(session, callback);
     } else if ("AMAZON.HelpIntent" === intentName) {
       AlexaSkill.prototype.getWelcomeResponse(callback);
     } else if ("AMAZON.StopIntent" === intentName || "AMAZON.CancelIntent" === intentName) {

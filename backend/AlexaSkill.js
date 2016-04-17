@@ -7,16 +7,17 @@ function AlexaSkill() {
 var FEEDBACK_NONE = "None";
 var FEEDBACK_HELLO = "hello";
 
+var JAPANESE_WORDS = {
+  hello: "ko Ni Chi Wa",
+  goodbye: "sayo Nara"
+};
 
+var BASE_URL = "<audio src='https://s3-us-west-1.amazonaws.com/lingoguru/converted";
 
-// function checkForCorrectIntent(session, lesson, word){
-//   if (session.attributes ||
-//       session.attributes.lesson ||
-//       session.attributes.lesson === lesson) {
-//     return true;
-//   }
-//   return false;
-// }
+var AUDIO_URLS = {
+  hello: BASE_URL + "Hello.mp3' />",
+  goodbye: BASE_URL + "Goodbye.mp3' />"
+};
 
 /**
  * Override any of the eventHandlers as needed
@@ -85,8 +86,8 @@ AlexaSkill.prototype.simpleHandlers = function(intentRequest, session, callback)
 	AlexaSkill.prototype.goodMorning(session, callback);
     } else if ( intentName === "bye" ){
 	AlexaSkill.prototype.bye(callback);
-    } else if ( intentName === "CustomAudio" ){
-	AlexaSkill.prototype.CustomAudio(callback);
+    } else if ( intentName === "SayWords" ){
+	AlexaSkill.prototype.SayWords(intent, callback);
     } else if ("AMAZON.HelpIntent" === intentName) {
 	AlexaSkill.prototype.getWelcomeResponse(callback);
     } else if ("AMAZON.StopIntent" === intentName || "AMAZON.CancelIntent" === intentName) {
@@ -119,36 +120,36 @@ AlexaSkill.prototype.feedbackHandlers = function(intentRequest, session, callbac
 
     console.log("YAYAYAYAY in the feedback handler");
 
-
-    
-    
     var intent = intentRequest.intent,
 	      intentName = intentRequest.intent.name,
         intentVal = intentRequest.intent.slots.japaneseWord.value;
     
     var sessionAttributes = {};
-    var cardTitle = "Feeback";
-    var speechOutput = "Can you please repeat that ? ";
-    var repromptText = "Say ko ni chi va";
+    var cardTitle = "Feedback";
+    // var speechOutput = "I didn't quite get that, try saying" + AUDIO_URLS[session.attributes.feedback];
+  var speechOutput = "I didn't quite get that, try saying " + intentVal;
+    var repromptText = "Please repeat after me," + AUDIO_URLS[session.attributes.feedback];
     var shouldEndSession = false;
-    sessionAttributes = AlexaSkill.prototype.createFeedbackAttributes(FEEDBACK_HELLO);
+    sessionAttributes = AlexaSkill.prototype.createFeedbackAttributes(session.attributes.feedback);
 
-    if (intentName === "feedback"){
+  if (intentName === "feedback"){
         console.log("Intent name was feedback because you used is it.");
 	console.log(intentRequest.intent.slots.japaneseWord);
 	console.log(intentRequest.intent.slots.japaneseWord.value);
-	if (intentVal === "ko Ni Chi Wa"){
-	    speechOutput = "Good job. You can now say hello in Japanese."
+
+	if (intentVal === JAPANESE_WORDS[session.attributes.feedback]){
+	    speechOutput = "Good job. You can now say " + session.attributes.feedback +  " in Japanese.";
 	    sessionAttributes  =  AlexaSkill.prototype.createFeedbackAttributes(FEEDBACK_NONE);
 	    shouldEndSession = true;
 	}
+
 	
 	callback(sessionAttributes,
 		 this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
     }
     
     else{
-	console.log("intent wasnt feedback");
+      console.log("intent wasn't feedback");
     }
     
 };
@@ -211,19 +212,38 @@ AlexaSkill.prototype.bye = function(callback){
 	     this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
 
-AlexaSkill.prototype.CustomAudio = function(callback){
-    
+AlexaSkill.prototype.SayWords = function(intent, callback){
+
+    var word = intent.slots.englishWord.value;
+    var wordURL = "";
+
+    var run = true;
+
+  switch(word) {
+    case "hello":
+      wordURL = "hello";
+      break;
+    case "goodbye":
+      wordURL = "goodbye";
+      break;
+    default:
+      run = false;
+      AlexaSkill.prototype.invalidIntent(callback);
+  }
+
+  if(run){
     var sessionAttributes = {};
     var cardTitle = "End LingoGuru";
-    var speechOutput = "Now repeat after me. <audio src='https://s3-us-west-1.amazonaws.com/lingoguru/convertedHello.mp3' /> ";
+    var speechOutput = "Now repeat after me. " + AUDIO_URLS[wordURL];
+    // var speechOutput = "Now repeat after me. " + word;
     var repromptText = "b'bye";
     var shouldEndSession = false;
-    sessionAttributes = AlexaSkill.prototype.createFeedbackAttributes(FEEDBACK_HELLO);
-    
-    callback(sessionAttributes,
-	     this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
-};
+    sessionAttributes = AlexaSkill.prototype.createFeedbackAttributes(wordURL);
 
+    callback(sessionAttributes,
+        this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+  }
+};
 
 AlexaSkill.prototype.setLangInSession = function(intent, session, callback) {
     var cardTitle = intent.name;

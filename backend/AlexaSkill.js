@@ -4,6 +4,15 @@ function AlexaSkill() {
   return this;
 }
 
+// ------------------ Helper functions ------------------
+
+function checkForCorrectLesson(session, lesson){
+  if (session.attributes || session.attributes.lesson || session.attributes.lesson.value === lesson) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Override any of the eventHandlers as needed
  */

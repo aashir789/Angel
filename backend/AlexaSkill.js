@@ -41,15 +41,19 @@ AlexaSkill.prototype.eventHandlers = {
 
     // Dispatch to your skill's intent handlers
     if ("PickLanguage" === intentName) {
-      AlexaSkill.prototype.setLangInSession(intent, session, callback);
+	AlexaSkill.prototype.setLangInSession(intent, session, callback);
     } else if ("PickLesson" === intentName){
-      AlexaSkill.prototype.setLessonInSession(intent, session, callback);
+	AlexaSkill.prototype.setLessonInSession(intent, session, callback);
     } else if ("SayLang" === intentName) {
-      AlexaSkill.prototype.getLangFromSession(intent, session, callback);
+	AlexaSkill.prototype.getLangFromSession(intent, session, callback);
     } else if ("HowAreYou" === intentName) {
-      AlexaSkill.prototype.howAreYou(session, callback);
+	AlexaSkill.prototype.howAreYou(callback);
     } else if ("GoodMorning" === intentName) {
-      AlexaSkill.prototype.goodMorning(session, callback);
+	AlexaSkill.prototype.goodMorning(callback);
+    } else if ( intentName === "bye" ){
+	AlexaSkill.prototype.bye(callback);
+    } else if ( intentName === "CustomAudio" ){
+	AlexaSkill.prototype.CustomAudio(callback);
     } else if ("AMAZON.HelpIntent" === intentName) {
       AlexaSkill.prototype.getWelcomeResponse(callback);
     } else if ("AMAZON.StopIntent" === intentName || "AMAZON.CancelIntent" === intentName) {
@@ -74,7 +78,7 @@ AlexaSkill.prototype.getWelcomeResponse = function(callback) {
   // If we wanted to initialize the session to have some attributes we could add those here.
   var sessionAttributes = {};
   var cardTitle = "Welcome";
-  var speechOutput = "Welcome to Lingo Guru. Please select a language.";
+  var speechOutput = "Welcome to Lingo Guru. The best language learning app. Please select a language.";
   // If the user either does not reply to the welcome message or says something that is not
   // understood, they will be prompted again with this text.
   var repromptText = "Please select a language by saying, " +
@@ -110,6 +114,32 @@ AlexaSkill.prototype.goodMorning = function(callback) {
   callback(sessionAttributes,
       this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
+
+
+AlexaSkill.prototype.bye = function(callback){
+
+    var sessionAttributes = {};
+    var cardTitle = "End LingoGuru";
+    var speechOutput = "Thank you for learning with Lingo Guru. Have a great day.";
+    var repromptText = "b'bye";
+    var shouldEndSession = true;
+    
+    
+    callback(sessionAttributes,
+	     this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+};
+
+AlexaSkill.prototype.CustomAudio = function(callback){
+    
+    var sessionAttributes = {};
+    var cardTitle = "End LingoGuru";
+    var speechOutput = "<audio src='https://s3-us-west-1.amazonaws.com/lingoguru/convertedHello.mp3' /> ";
+    var repromptText = "b'bye";
+    var shouldEndSession = false;
+    callback(sessionAttributes,
+	     this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+};
+
 
 AlexaSkill.prototype.setLangInSession = function(intent, session, callback) {
   var cardTitle = intent.name;

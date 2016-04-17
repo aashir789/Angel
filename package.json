@@ -1,0 +1,21 @@
+{
+  "name": "Angel",
+  "version": "0.0.0",
+  "description": "Repo for Angel Hacks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aashir789/Angel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aashir789/Angel/issues"
+  },
+  "homepage": "https://github.com/aashir789/Angel",
+  "dependencies": {
+  }
+}

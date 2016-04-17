@@ -117,8 +117,8 @@ function getWelcomeResponse(callback) {
   var speechOutput = "Welcome to Lingo Guru. Please select a language.";
   // If the user either does not reply to the welcome message or says something that is not
   // understood, they will be prompted again with this text.
-  var repromptText = "Please tell me your favorite color by saying, " +
-      "my favorite color is red";
+  var repromptText = "Please select a language saying, " +
+      "select Japanese for example.";
   var shouldEndSession = false;
 
   callback(sessionAttributes,
@@ -157,7 +157,7 @@ function goodMorning(callback) {
 
 function handleSessionEndRequest(callback) {
   var cardTitle = "Session Ended";
-  var speechOutput = "Thank you for trying the Alexa Skills Kit sample. Have a nice day!";
+  var speechOutput = "Thank you for learning with Lingo Guru. Have a nice day!";
   // Setting this to true ends the session and exits the skill.
   var shouldEndSession = true;
 
@@ -179,11 +179,11 @@ function setLangInSession(intent, session, callback) {
     var lang = langSlot.value;
     sessionAttributes = createLangAttributes(lang);
     speechOutput = "You have selected " + lang;
-    repromptText = "You can set the languages by saying, start Japansese for example.";
+    repromptText = "You can set the languages by saying, select Japansese for example.";
   } else {
-    speechOutput = "I'm not sure what your favorite color is. Please try again";
-    repromptText = "I'm not sure what your favorite color is. You can tell me your " +
-        "favorite color by saying, my favorite color is red";
+    speechOutput = "I'm not sure what language you want to study. Please try again";
+    repromptText = "I'm not sure what language you want to study." +
+        "You can set the languages by saying, start Japansese for example.";
   }
 
   callback(sessionAttributes,
@@ -193,7 +193,7 @@ function setLangInSession(intent, session, callback) {
 /**
  * Sets the lesson in the session and prepares the speech to reply to the user.
  */
-function setLangInSession(intent, session, callback) {
+function setLessonInSession(intent, session, callback) {
   var cardTitle = intent.name;
   var lessonSlot = intent.slots.lesson;
   var repromptText = "";
@@ -204,12 +204,12 @@ function setLangInSession(intent, session, callback) {
   if (lessonSlot) {
     var lesson = lessonSlot.value;
     sessionAttributes = createLessonAttributes(lesson);
-    speechOutput = "You have selected " + lang;
-    repromptText = "You can set the languages by saying, start Japansese for example.";
+    speechOutput = "You are now in " + lang;
+    repromptText = "You can choose a lesson by saying, start lesson one for example.";
   } else {
-    speechOutput = "I'm not sure what your favorite color is. Please try again";
-    repromptText = "I'm not sure what your favorite color is. You can tell me your " +
-        "favorite color by saying, my favorite color is red";
+    speechOutput = "I'm not sure what lesson you want to start. Please try again";
+    repromptText = "I'm not sure what lesson you want to start" +
+        "You can choose a lesson by saying, start lesson one for example.";
   }
 
   callback(sessionAttributes,
@@ -222,7 +222,7 @@ function createLangAttributes(lang) {
   };
 }
 
-function createLessonAttributes(lang) {
+function createLessonAttributes(lesson) {
   return {
     lesson: lesson
   };
@@ -241,7 +241,6 @@ function getLangFromSession(intent, session, callback) {
 
   if (lang) {
     speechOutput = "You are currently studying " + lang + ".";
-    shouldEndSession = true;
   } else {
     speechOutput = "I'm not sure what language you are learning.";
   }

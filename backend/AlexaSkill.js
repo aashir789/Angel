@@ -6,12 +6,14 @@ function AlexaSkill() {
 
 // ------------------ Helper functions ------------------
 
-function checkForCorrectLesson(session, lesson){
-  if (session.attributes || session.attributes.lesson || session.attributes.lesson.value === lesson) {
-    return true;
-  }
-  return false;
-}
+// function checkForCorrectIntent(session, lesson, word){
+//   if (session.attributes ||
+//       session.attributes.lesson ||
+//       session.attributes.lesson === lesson) {
+//     return true;
+//   }
+//   return false;
+// }
 
 /**
  * Override any of the eventHandlers as needed
@@ -48,6 +50,8 @@ AlexaSkill.prototype.eventHandlers = {
     var intent = intentRequest.intent,
         intentName = intentRequest.intent.name;
 
+
+
     // Dispatch to your skill's intent handlers
     if ("PickLanguage" === intentName) {
 	AlexaSkill.prototype.setLangInSession(intent, session, callback);
@@ -56,9 +60,9 @@ AlexaSkill.prototype.eventHandlers = {
     } else if ("SayLang" === intentName) {
 	AlexaSkill.prototype.getLangFromSession(intent, session, callback);
     } else if ("HowAreYou" === intentName) {
-	AlexaSkill.prototype.howAreYou(callback);
+	AlexaSkill.prototype.howAreYou(session, callback);
     } else if ("GoodMorning" === intentName) {
-	AlexaSkill.prototype.goodMorning(callback);
+	AlexaSkill.prototype.goodMorning(session, callback);
     } else if ( intentName === "bye" ){
 	AlexaSkill.prototype.bye(callback);
     } else if ( intentName === "CustomAudio" ){
@@ -98,7 +102,8 @@ AlexaSkill.prototype.getWelcomeResponse = function(callback) {
       this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
 
-AlexaSkill.prototype.howAreYou = function(callback) {
+AlexaSkill.prototype.howAreYou = function(session, callback) {
+
   var sessionAttributes = {};
   var cardTitle = "Convo";
   var speechOutput = "Im well, thank you for asking!";
@@ -111,7 +116,7 @@ AlexaSkill.prototype.howAreYou = function(callback) {
       this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
 
-AlexaSkill.prototype.goodMorning = function(callback) {
+AlexaSkill.prototype.goodMorning = function(session, callback) {
   var sessionAttributes = {};
   var cardTitle = "Convo";
   var speechOutput = "Good Morning!";
@@ -184,8 +189,13 @@ AlexaSkill.prototype.setLessonInSession = function(intent, session, callback) {
   if (lessonSlot) {
     var lesson = lessonSlot.value;
     sessionAttributes = this.createLessonAttributes(lesson);
-    speechOutput = "You are now in " + lesson;
+    speechOutput = "You are now in " + lesson + ".";
     repromptText = "You can choose a lesson by saying, start lesson one for example.";
+
+    if (true){
+      speechOutput += "Repeat the Japanese words after me. Hello is, <audio src='https://s3-us-west-1.amazonaws.com/lingoguru/convertedHello.mp3' />.";
+    }
+
   } else {
     speechOutput = "I'm not sure what lesson you want to start. Please try again";
     repromptText = "I'm not sure what lesson you want to start" +

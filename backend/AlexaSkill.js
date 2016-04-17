@@ -85,6 +85,19 @@ AlexaSkill.prototype.getWelcomeResponse = function(callback) {
       this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
 
+AlexaSkill.prototype.howAreYou = function(callback) {
+  var sessionAttributes = {};
+  var cardTitle = "Convo";
+  var speechOutput = "Im well, thank you for asking!";
+  // If the user either does not reply to the welcome message or says something that is not
+  // understood, they will be prompted again with this text.
+  var repromptText = "What?";
+  var shouldEndSession = false;
+
+  callback(sessionAttributes,
+      this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+};
+
 AlexaSkill.prototype.goodMorning = function(callback) {
   var sessionAttributes = {};
   var cardTitle = "Convo";

@@ -1,0 +1,1 @@
+ffmpeg -i ./hello.mp3 -ab 48k -c mp3 -ac 2 -ar 16000 -af volume=2 convertedHello.mp3

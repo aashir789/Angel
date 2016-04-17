@@ -4,11 +4,22 @@ function AlexaSkill() {
     return this;
 }
 
+<<<<<<< HEAD
 
 var FEEDBACK_NONE = "None";
 var FEEDBACK_HELLO = "hello";
 
 
+=======
+// ------------------ Helper functions ------------------
+
+function checkForCorrectLesson(session, lesson){
+  if (session.attributes || session.attributes.lesson || session.attributes.lesson.value === lesson) {
+    return true;
+  }
+  return false;
+}
+>>>>>>> 727f083eb96de305d2b85a8646c68351a67973bf
 
 /**
  * Override any of the eventHandlers as needed

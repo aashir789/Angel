@@ -126,8 +126,7 @@ AlexaSkill.prototype.feedbackHandlers = function(intentRequest, session, callbac
     
     var sessionAttributes = {};
     var cardTitle = "Feedback";
-    // var speechOutput = "I didn't quite get that, try saying" + AUDIO_URLS[session.attributes.feedback];
-  var speechOutput = "I didn't quite get that, try saying " + intentVal;
+    var speechOutput = "I didn't quite get that, try saying " + AUDIO_URLS[session.attributes.feedback];
     var repromptText = "Please repeat after me," + AUDIO_URLS[session.attributes.feedback];
     var shouldEndSession = false;
     sessionAttributes = AlexaSkill.prototype.createFeedbackAttributes(session.attributes.feedback);

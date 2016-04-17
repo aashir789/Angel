@@ -1,0 +1,495 @@
+<!doctype html><!--[if lt IE 7]><html class="a-no-js a-lt-ie10 a-lt-ie9 a-lt-ie8 a-lt-ie7 a-ie6" data-19ax5a9jf="dingo"><![endif]--><!--[if IE 7]><html class="a-no-js a-lt-ie10 a-lt-ie9 a-lt-ie8 a-ie7" data-19ax5a9jf="dingo"><![endif]--><!--[if IE 8]><html class="a-no-js a-lt-ie10 a-lt-ie9 a-ie8" data-19ax5a9jf="dingo"><![endif]--><!--[if IE 9]><html class="a-no-js a-lt-ie10 a-ie9" data-19ax5a9jf="dingo"><![endif]--><!--[if !IE]><!--><html class="a-no-js" data-19ax5a9jf="dingo"><!--<![endif]--><html>
+<head>
+    <title>Amazon Apps & Services Developer Portal</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" >
+        <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta name="author" content="Amazon.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script type="text/javascript">var ue_t0=window.ue_t0||+new Date();</script><script type="text/javascript">(function(e){var c=e;var a=c.ue||{};a.main_scope="mainscopecsm";a.q=[];a.t0=c.ue_t0||+new Date();a.d=g;function g(h){return +new Date()-(h?0:a.t0)}function d(h){return function(){a.q.push({n:h,a:arguments,t:a.d()})}}function b(m,l,h,j,i){var k={m:m,f:l,l:h,c:""+j,err:i,fromOnError:1,args:arguments};c.ueLogError(k);return false}b.skipTrace=1;e.onerror=b;function f(){c.uex("ld")}if(e.addEventListener){e.addEventListener("load",f,false)}else{if(e.attachEvent){e.attachEvent("onload",f)}}a.tag=d("tag");a.log=d("log");a.reset=d("rst");c.ue_csm=c;c.ue=a;c.ueLogError=d("err");c.ues=d("ues");c.uet=d("uet");c.uex=d("uex");c.uet("ue")})(window);(function(e,d){var a=e.ue||{};function c(g){if(!g){return}var f=d.head||d.getElementsByTagName("head")[0]||d.documentElement,h=d.createElement("script");h.async="async";h.src=g;f.insertBefore(h,f.firstChild)}function b(){var k=e.ue_cdn||"z-ecx.images-amazon.com",g=e.ue_cdns||"images-na.ssl-images-amazon.com",j="/images/G/01/csminstrumentation/",h=e.ue_file||"ue-full-051542d0cfa6f645f8266601739de597._V1_.js",f,i;if(h.indexOf("NSTRUMENTATION_FIL")>=0){return}if("ue_https" in e){f=e.ue_https}else{f=e.location&&e.location.protocol=="https:"?1:0}i=f?"https://":"http://";i+=f?g:k;i+=j;i+=h;c(i)}if(!e.ue_inline){if(a.loadUEFull){a.loadUEFull()}else{b()}}a.uels=c;e.ue=a})(window,document);</script><!--[if lt IE 9]>
+    <script src="
+
+
+
+
+
+
+https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/js/ie-html5.js
+"></script>
+<![endif]-->
+    
+<link rel="stylesheet" type="text/css" href="
+
+
+
+
+
+
+https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/css/reset._V140192918_.css
+">
+
+<link rel="stylesheet" type="text/css" href="
+
+
+
+
+
+
+https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/css/reskin_v3.css
+">
+  
+<link href="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/jqueryui/1.8.2/jquery-ui._V193246661_.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/css/webfonts._V326851759_.css" />
+<link rel="stylesheet" type="text/css" href="
+
+
+
+
+
+
+/res/css/displaytag.css
+">
+<link rel="stylesheet" type="text/css" href="/res/css/override.css">    
+<link rel="stylesheet" type="text/css" href="/res/css/override_mblite.css">
+<link rel="stylesheet" type="text/css" href="/res/css/notification.css">
+<link rel="stylesheet" type="text/css" href="/res/css/modal.css">
+<link rel="stylesheet" type="text/css" href="/res/css/tooltip.css">
+<link rel="stylesheet" type="text/css" href="/res/css/beta.css">
+
+<script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/jquery/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/javascripts/lib/jquery/jquery-ui-1.8.4.custom.min.js"></script>
+
+<!-- LightBox1 -->
+<link rel="stylesheet" type="text/css" href="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/lightbox/lightbox.css" media="screen" />
+<script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/lightbox/lightbox.js"></script>
+
+<!-- JCryption -->
+<script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/jcryption/jCryption.js"></script>  
+
+<!-- Common Modal JS -->
+<script type="text/javascript" src="/res/js/modal.js"></script><script type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/jquery/i18n/jquery.ui.datepicker-en_US.js"></script>
+    <script type="text/javascript">
+        var DpConfig = DpConfig || {};
+        DpConfig.decimalFormatLocalizedPattern = "#,##0.###";
+        
+        DpConfig.maxFileSizeForAssetUploads = 100 * 1048576;
+    </script>
+    <script type="text/javascript">
+var DpMessages = DpMessages || {};
+DpMessages.uploadFileSizeExceededMessage = 'Cannot upload file. Invalid size.';
+DpMessages.uduCancellingMessage = 'Cancelling...';
+DpMessages.uduNeedToRunMessage = 'Need to run? You can navigate away from this page while we process your app...';
+DpMessages.registrationContractNotFound = 'Error: Cannot find contract version.';
+
+DpMessages.paymentsElectronicFundsTransfer = 'Electronic funds transfer';
+DpMessages.paymentsCheck = 'Check';
+DpMessages.paymentsWireTransfer = 'Wire Transfer';
+DpMessages.paymentsElectronicPayment = 'Electronic Payment';
+
+DpMessages.taxInterviewDateOnOrAfter = 'The provided date should be on or after';
+DpMessages.taxInterviewDateOnOrBefore = 'The provided date should be on or before';
+DpMessages.taxInterviewInvalidDate = 'The value should be in mm/dd/YYYY or YYYY-mm-dd date format';
+DpMessages.taxInterviewInvalidValue = 'The value you have provided is either invalid or not in required format. Please click &ldquo;?&rdquo; sign on the left for help.';
+DpMessages.taxInterviewMustBeANumber = 'The value must be a number';
+DpMessages.taxInterviewNavigateAway = 'You are navigating away from the Tax Interview wizard. The information you entered will not be retained. Do you want to exit the interview?';
+DpMessages.taxInterviewNumberEqualOrExceeds = 'The provided number should be equal to or exceed';
+DpMessages.taxInterviewNumberEqualOrLessThan = 'The provided number should be equal to or less than';
+DpMessages.taxInterviewSelectionMandatory = 'This selection is mandatory';
+DpMessages.taxInterviewSelectionRequired = 'A selection is required';
+DpMessages.taxInterviewSubmit = 'Submit';
+DpMessages.taxInterviewSubmitW8 = 'Submit W8';
+DpMessages.taxInterviewSubmitW9 = 'Submit W9';
+DpMessages.taxInterviewValueRequired = 'A value is required';
+
+DpMessages.ajaxBrowse = 'browse for a file';
+DpMessages.ajaxBrowseBulk =  'browse for the files';
+DpMessages.redirectToOldRichAssetPage = 'This page is not supported by your browser. Please use a browser with HTML5 support or click Ok to upload your assets using the legacy page.';
+DpMessages.bulkUploadChooseAmount ='(You can choose at most {0} file(s).)';
+DpMessages.bulkUploadChooseNone = '(You have already uploaded the maximum amount of {0} that can be added. This file has not been uploaded.)';
+DpMessages.chooseFile = 'Choose File';
+DpMessages.buttonConfirm = 'OK';
+DpMessages.buttonCancel = 'Cancel';
+DpMessages.uploadingPageLeave = 'You currently have files uploading. Leaving the page could cause the uploads to fail, do you wish to continue?';
+DpMessages.invalidAssetResWithArg = 'Failed to upload image. Invalid {0} resolution, see below for accepted resolutions.';
+DpMessages.bulkUploadMessage = 'You have reached the maximum number of images or videos you can upload. Please select the files you want to include or click Cancel.';
+
+DpMessages.smallIconName = 'Small icon';
+DpMessages.largeIconName = 'Large icon';
+// Business pulled extra large icon last minute, but may want it back in the future.
+// DpMessages.extraLargeIconName = getAssetName('Extra large icon (Recommended)');
+DpMessages.screenShotsName = 'Screenshots';
+DpMessages.purchaseShotName = 'Purchase action screenshot';
+DpMessages.promoName = getAssetName('Promotional image (Recommended)');
+DpMessages.videoName = getAssetName('Video(s)');
+DpMessages.pleaseSelect = 'Please select';
+
+//An object to handle translating error codes to strings 
+var ErrorCodeUtil = ErrorCodeUtil || {};
+ErrorCodeUtil.error_global_metadata_readonly = 'Read Only.';
+ErrorCodeUtil.error_global_empty_multipart = 'Failed to upload asset. The uploaded file appears to be empty.  Please use a different file or contact us if the problem persists.';
+ErrorCodeUtil.error_global_invalid_video_count = 'Failed to upload video.  Max number of videos has been reached.';
+ErrorCodeUtil.error_global_invalid_asset_name = 'Failed to upload image/video.  Invalid name.';
+ErrorCodeUtil.error_global_invalid_asset_size = 'Failed to upload image/video.  Invalid size.';
+ErrorCodeUtil.error_global_invalid_icon_type = 'Failed to upload image.  Invalid icon type. Must be PNG 24 or 32 bits.';
+ErrorCodeUtil.error_global_invalid_asset_type = 'Failed to upload image/video.  Invalid type.';
+ErrorCodeUtil.error_global_invalid_image_format = 'Failed to upload image.  Invalid image format.';
+ErrorCodeUtil.error_global_invalid_video_duration = 'Failed to upload video.  Invalid video duration.';
+ErrorCodeUtil.error_global_invalid_video_format = 'Failed to upload video.  Invalid video format.';
+ErrorCodeUtil.error_global_failed_upload_asset = 'Failed to upload image/video.  Please try again or contact us if the problem persists.';
+ErrorCodeUtil.error_global_invalid_icon_type_with_args = 'Failed to upload image.  Invalid icon type. Must be PNG 24 or 32 bits. Image type of invalid uploaded image is {0}.';
+
+ErrorCodeUtil.error_global_invalid_asset_size_icon = 'Failed to upload image. Invalid icon size, must be 114 x 114 pixels but is {0} x {1} pixels.';
+ErrorCodeUtil.error_global_invalid_asset_size_thumbnail = 'Failed to upload image. Invalid icon size, must be 512 x 512 pixels but is {0} x {1} pixels.';
+// Business pulled extra large icon last minute, but may want it back in the future.
+// ErrorCodeUtil.error_global_invalid_asset_size_extralargeicon = 'Failed to upload image. Invalid icon size, must be 1024 x 1024 pixels but is {0} x {1} pixels.';
+ErrorCodeUtil.error_global_invalid_asset_size_screenshot = 'Failed to upload image. Invalid screenshot size, the uploaded image is {0} x {1} pixels. Acceptable dimensions are 800 x 480px, 1024 x 600px, 1280 x 720px, 1280 x 800px, or 1920 x 1200px (portrait or landscape).';
+ErrorCodeUtil.error_global_invalid_asset_size_screenshot_hi_res = 'Failed to upload image. Invalid screenshot size, the uploaded image is {0} x {1} pixels. Acceptable dimensions are 800 x 480px, 1024 x 600px, 1280 x 720px, 1280 x 800px, 1920 x 1200px, or 2560 x 1600px (portrait or landscape).';
+ErrorCodeUtil.error_global_invalid_asset_size_promotionalimage = 'Failed to upload image. Invalid promotional image size, must be 1024 x 500 pixels but is {0} x {1} pixels.';
+ErrorCodeUtil.error_global_invalid_asset_type_known_uploaded_file_with_args = 'Failed to upload image/video.  Invalid type. Must be one of {0}. Image type of invalid uploaded image is {1}.';
+ErrorCodeUtil.error_global_invalid_asset_type_with_args = 'Failed to upload image/video.  Invalid type. Must be one of {0}.';
+
+//Attempts to translate the given errorCode into it's corresponding message. If the errorCode is not found
+//the default message (error_global_failed_upload_asset) is returned
+ErrorCodeUtil.translateToString = function(errorCode) {
+    var retString = this[errorCode];
+    if (retString === undefined) {
+    	console.log("Unable to find the proper error message, reverting to default.");
+        retString = this.error_global_failed_upload_asset;
+    }
+    return retString;
+};
+
+var ArgumentReplaceUtil = ArgumentReplaceUtil || {};
+
+//Takes an error message (should be one from errors.properties) and replaces the argument place holders 
+//with the provided arguments. For example replaceArgsWith("This is a {0} with {1} arguments.", [string, two]) 
+//will return "This is a string with two arguments." Returns the original string, if the number of argument 
+//place holders in the errorMessage doesn't match the number of elements in the argsArray 
+ArgumentReplaceUtil.replaceArgsWith = function(errorMessage, argsArray) {
+    if (Object.prototype.toString.call(argsArray) !== '[object Array]') {
+        return errorMessage;
+    }
+    var placeHolderRegex = /\{[0-9]*\}/g;
+    var matches = errorMessage.match(placeHolderRegex);
+    if (argsArray.length != errorMessage.match(placeHolderRegex).length) {
+        return errorMessage;
+    }
+    
+    var singleRegex;
+    for (var i = 0; i < argsArray.length; ++i) {
+        singleRegex = "\{" + i + "\}";
+        errorMessage = errorMessage.replace(singleRegex, argsArray[i]);
+    }
+    return errorMessage;
+};
+
+function getAssetName(str) {
+	if (str.indexOf(" (") !== -1) {
+		   return str.split(" (")[0];
+	}
+	return str.split("(")[0];	   
+}
+</script>
+	
+    
+    <!-- Load CodeMirror CSS first so we can overwrite their properties -->
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/isteven-multi-select.css">
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/lint.css">
+    <link rel="stylesheet" type="text/css" href="/edw/res/css/edw.css">
+
+    <script src="/edw/res/js/lib/core.min.js"></script>
+    <script src="/edw/res/js/lib/enc-utf16.min.js"></script>
+    <script src="/edw/res/js/lib/enc-base64.min.js"></script>
+    <script src="/edw/res/js/lib/angular.min.js"></script>
+    <script src="/edw/res/js/lib/angular-ui-router.min.js"></script>
+    <script src="/edw/res/js/lib/angular-cookies.min.js"></script>
+    <script src="/edw/res/js/lib/require-2.1.16.min.js"></script>
+    <script src="/edw/res/js/lib/angular-sanitize.min.js"></script>
+    <script src="/edw/res/js/edw_config.js"></script>
+    <script src="/edw/res/js/edw_app.min.js"></script>
+</head>
+
+<body>
+    <div id="maintenance-banner">
+        </div>
+    <div class="container">
+         <header id="primary-header" style="">
+                <div class="content-container">
+                <a href="/appsandservices"> <img id="primary-header_dp_logo"
+                    src="
+
+
+
+
+
+
+/res/images/logo-amazon.png
+" />
+                </a>
+                <div id="util" style="float:left;border:none;">
+                <p style="border:none;">
+                    <strong>// Developer Console</strong>
+                </p>
+                </div>
+
+                <a href="/appsandservices"> <img id="primary-header_dp_logo" style="margin-top:-20px;z-index:-1;position:absolute;"
+                    src="
+
+
+
+
+
+
+https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/logo-dp.png
+" />
+                </a>
+
+              <div id="util" style="">
+
+                    <p>
+                        <strong>Aashir</strong>
+
+                        <strong>—&nbsp;Talk2Me&nbsp;</strong>
+                        <p><a id="logout_link" href="/logout.html"><strong>Sign Out</strong></a></p>
+                    <menu id="headerLanguageDropdown">
+                        <a class="button" href="#" >ENGLISH</a>
+                        <ul>
+                                <li><a href="?preferredLanguage=en_US">ENGLISH</a></li>
+                                <li><a href="?preferredLanguage=zh_CN">中文 (CHINESE)</a></li>
+                                <li><a href="?preferredLanguage=ja_JP">日本語 (JAPANESE)</a></li>
+                                </ul>
+                        </menu>
+                </div>
+                </div>
+        </header>
+
+        <nav class=""  role="navigation">
+        <div class="mainnav-container">
+
+            <ul>
+            <li>
+                    <a id="top_nav_home" class="" href="/home.html" >
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a id="top_nav_myapps" class="current" href="/myapps.html">
+                        Apps & Services</a>
+                </li>
+            <li><a id="top_nav_reporting" class="" href="/rp/sales.html">Reporting</a></li>
+                    <li><a id="top_nav_support" class="" href="/help/faq.html">Support</a></li>
+            <li><a id="top_nav_documentation" class="" href="/documentation/menu.html">Documentation</a></li>
+
+             <li><a id="top_nav_settings" class="" href="/myaccount.html">Settings</a></li>
+             </ul>
+
+            <div class="subnav-container">
+                <ul class="subnav">
+                    <li><a id="appsandservices_myapps" class=""  href="/myapps.html">My Apps</a></li>
+
+                        <li id="sdk_apptesting_link"><a class="" href="/tya/welcome.html">App Testing Service</a></li>
+
+                        <li><a id="appsandservices_promotion" class=""  href="/mnp/home.html">Promotions</a></li>
+
+                        <li><a id="appsandservices_identity" class=""  href="/iba-sp/overview.html">Security Profiles</a></li>
+
+                        <li><a id="appsandservices_login_with_amazon" class=""  href="/lwa/sp/overview.html">Login with Amazon</a></li>
+
+                        <li><a id="appsandservices_clouddrive" class=""  href="/cd/sp/overview.html">Cloud Drive</a></li>
+
+                        <li><a id="appsandservices_echodeveloperwebsite" class="current"  href="/edw/home.html">Alexa <sup>New</sup></a></li>
+
+                        <li><a id="appsandservices_gc" class=""  href="/gc/cfg/index.html">GameCircle</a></li>
+                        <li><a id="appsandservices_abtest" class=""  href="/al/index.html">A/B Testing</a></li>
+                        <li><a id="appsandservices_analytics" class=""  href="/insights/applications/home.html">Analytics</a></li>
+                        <li><a id="appsandservices_instantaccess" class=""  href="/instantaccess/profiles.html">PC / Mac & Web Instant Access</a></li>
+                        <li><a id="appsandservices_beta" class=""  href="/beta-pr/cfg/testers.html">Tester Management</a></li>
+                        <li><a id="appsandservices_mobileadsapps" class=""  href="/ma/apps/mobile-ads-apps.html">Mobile Ads</a></li>
+
+                        </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="workspace">
+        <div class="content-container">
+            
+  <section id="control-panel">
+	
+    <div id="EDW_SCRIPT_LOAD_FAILED" style="display:none;" >
+        <h2>Error loading javascript, please try refreshing.</h2>
+    </div>
+    <div id="EDW_APP_ROOT" style="display:none;">
+        <!-- ng-cloak is used to prevent the template itself be rendered before anglurJS processing it-->
+        <div ng-cloak class="EDWMainWebsiteContainer">
+            <!-- dynamic part that will be changed according to hashtag -->
+            <div ui-view></div>
+
+            <!-- loading bar -->
+            <div id="EDW_Main_Loading_Status" ng-controller="CommonController" ng-show="getLoadingMessage()" class="MainLoadingMessage">
+                <h1>{{getLoadingMessage()}}</h1>
+                <img src="/edw/res/images/ajax-loader.gif" />
+            </div>
+
+            <!-- status bar -->
+            <div id="EDW_Status" ng-controller="CommonController" ng-show="getStatus().type" class="MainStatusBar">
+                <h2 ng-show="getStatus().type === 'success'">{{getStatus().message}}</h2>
+                <h2 ng-class="{'EDW_StatusError': getStatus().type === 'error'}" ng-show="getStatus().type === 'error'">{{getStatus().message}}</h2>
+                <h2 ng-class="{'EDW_StatusError': getStatus().type === 'sessionExpired'}" ng-show="getStatus().type === 'sessionExpired'">
+                    Error: Your session has expired. Please save your work and click <a href="javascript: window.location.reload()">here</a> to reload. 
+                </h2>
+                <div ng-show="getStatus().stackTrace">
+                    <h2>Stack trace:</h2>
+                    <textarea rows="10" cols="100" >{{getStatus().stackTrace}}</textarea>
+                </div>
+            </div>
+
+            <div ng-controller="CommonController"
+                 ng-show="isMessageBoxVisible()"
+                 class="edw-messagebox-overlay" >
+            </div>
+            <div class="edw-messagebox"
+                ng-controller="CommonController" 
+                ng-show="isMessageBoxVisible()"
+                >
+                <span class ="edw-messagebox-title">{{getMessageBoxTtile()}}</span>
+                <div class="edw-messagebox-text">{{getMessageBoxText()}}</div>
+                <div class ="edw-messagebox-button-container">
+                    <button ng-repeat="btn in getMessageBoxButtons()"
+                            ng-click="handleMessageBoxButtonClicked(btn)"
+                            ng-class="{'edw-button-primary': btn.highlight, '': !btn.highlight}" >
+                        {{btn.optionName}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //The following script will run after the browser finished processing <head> 
+        //and trying to render the body.
+        //we are checking various javascript component to make sure all necessary javascripts
+        //are loaded by the browser correctly.
+        (function(window, angular) {
+            function isModuleExist(moduleName) {
+                try {
+                    angular.module(moduleName);
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+            if (window.angular
+                    && isModuleExist('ui.router')
+                    && isModuleExist('ngCookies')
+                    && window.requirejs
+                    && isModuleExist('edwApp')) {
+                //now we can safely show our app's html page
+                document.getElementById('EDW_APP_ROOT').setAttribute('style', '');
+            } else {
+                //show error message since one of the required script is not available. 
+                document.getElementById('EDW_SCRIPT_LOAD_FAILED').setAttribute('style', '');
+            }
+        })(window, window.angular);
+    </script>
+    </section>
+<footer role="contentinfo">
+	<div class="content-container">
+    <ul>
+        <li><a id="footer_faq" href="/appsandservices/support/faq">FAQs</a></li>
+        <li><a id="footer_contact_us" href="/appsandservices/support/contact/contact-us">Contact Us</a></li>
+        <li><a id="footer_da" href="/appsandservices/support/legal/da">App Distribution Agreement</a></li>
+        <li><a id="footer_trademark" href="/appsandservices/support/legal/tuabg">Trademark Guidelines</a></li>
+        <li><a id="footer_terms" href="/appsandservices/support/legal/tou">Terms of Use</a></li>
+        <li><a id="footer_jobs" href="/jobs">Job Opportunities</a></li>
+    </ul>
+    <p>
+    &copy; 2010-2016, Amazon.com, Inc. or its affiliates. All Rights Reserved.</div>
+</footer>
+
+</div>
+       </div>
+
+    </div>
+
+    <script type="text/javascript" src="/res/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/res/js/common.js"></script>
+    <script type="text/javascript" src="/res/js/lnf.js"></script>
+    <script type="text/javascript" src="/res/js/availabilityprices.js"></script>
+    <script type="text/javascript" src="/res/js/availabilitydateandtimes.js"></script>
+    <script type="text/javascript" src="/res/js/userpermissions.js"></script>
+    <script type="text/javascript" src="/res/js/taxsettings.js"></script>
+    <script type="text/javascript" src="/res/js/payments.js"></script>
+    <script type="text/javascript">
+    if (window.ue && window.ue.tag) {
+        window.ue.tag("postlogin", ue.main_scope);
+    }
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SiteCatalyst code version: H.26.
+Copyright 1996-2015 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal/s_code2.js"></script>
+
+<script type="text/javascript">var SiteCatalystId = "amzn1.account.AGL4UHZOSF5BIMR4G3MY3MGGRKWA"</script>
+
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="/edw/home.html"
+s.server="developer.amazon.com"
+s.channel=""
+s.pageType=""
+s.prop1="216.239.55.136"
+s.prop2="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36"
+s.prop3="TAVYZ"
+s.prop5="ROLE_ADMINISTRATOR"
+/* App Status, populated by /application/ pages only */
+s.prop6=""
+s.prop7=""
+/* Conversion Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3=""
+s.eVar4=""
+s.eVar5=""
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://amazonservices.d2.sc.omtrdc.net/b/ss/amzna2z/1/H.22.1--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.26. -->
+
+<div id="limited-access-tooltip">
+    Unavailable During Maintenance
+    </div>
+    </body>
+</html>
+</html>

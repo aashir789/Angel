@@ -51,6 +51,9 @@ exports.handler = function (event, context) {
       context.succeed();
     }
   } catch (e) {
-    context.fail("Exception: " + e);
+    // context.fail("Exception: " + e);
+    newSkill.invalidIntent(function callback(sessionAttributes, speechletResponse) {
+      context.succeed(newSkill.buildResponse(sessionAttributes, speechletResponse));
+    });
   }
 };

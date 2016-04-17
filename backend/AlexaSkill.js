@@ -92,8 +92,23 @@ AlexaSkill.prototype.simpleHandlers = function(intentRequest, session, callback)
     } else if ("AMAZON.StopIntent" === intentName || "AMAZON.CancelIntent" === intentName) {
 	AlexaSkill.prototype.handleSessionEndRequest(callback);
     } else {
-	throw "Invalid intent";
+      AlexaSkill.prototype.invalidIntent(callback);
     }
+
+};
+
+AlexaSkill.prototype.invalidIntent = function (callback) {
+  // If we wanted to initialize the session to have some attributes we could add those here.
+  var sessionAttributes = {};
+  var cardTitle = "Error";
+  var speechOutput = "I didn't get that. Can you please say it again?";
+  // If the user either does not reply to the welcome message or says something that is not
+  // understood, they will be prompted again with this text.
+  var repromptText = "What would you like to do?";
+  var shouldEndSession = false;
+
+  callback(sessionAttributes,
+      this.buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 };
 
 
